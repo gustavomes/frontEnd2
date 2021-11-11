@@ -60,7 +60,7 @@ let vaiStorage = carrosArray.join('\n');
 localStorage.setItem('carros', vaiStorage);
 
     //enviar para o html
-p.innerText = (JSON.parse(carroStr[1]));
+p.innerText = carrosArray;
 
 });
 
