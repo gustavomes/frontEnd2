@@ -7,7 +7,7 @@ REQUISITOS
 */
 
 
-
+// selecionar o DOM
 let marca = document.querySelector('#marca');
 let modelo = document.querySelector('#modelo');
 let placa = document.querySelector('#placa');
@@ -15,8 +15,11 @@ let btn = document.querySelector('#btn');
 let p = document.querySelector('p');
 
 
+// criar um array
 
 let carrosArray = [];
+
+//resgatar o localStorage
 
 let carroRec = localStorage.getItem('carros');
 
@@ -27,8 +30,13 @@ if (carroRec !== null) {
     p.innerText = 'Não há carros cadastrados';
 }
 
+//Evento de botão
+
 btn.addEventListener('click', (event) => {
     event.preventDefault();
+
+
+    //criar um objeto
 
     let Carro = {
 
@@ -36,17 +44,19 @@ btn.addEventListener('click', (event) => {
         modelo: modelo.value,
         placa: placa.value,
     }
-   
-    //console.log(Carro);
 
+  //transformar o objeto em string
 let carroStr = JSON.stringify(Carro);
-
+  
+//adicionar o objeto no array
 carrosArray.push(carroStr);
 
+//adicionar no localStorage
 let vaiStorage = carrosArray.join('\n');
 
 localStorage.setItem('carros', vaiStorage);
 
+    //enviar para o html
 p.innerText = (JSON.parse(carroStr[1]));
 
 });
