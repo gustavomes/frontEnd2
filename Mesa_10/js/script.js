@@ -7,6 +7,9 @@ REQUISITOS
 */
 
 
+// versão com objeto literal
+
+
 // selecionar o DOM
 let marca = document.querySelector('#marca');
 let modelo = document.querySelector('#modelo');
@@ -61,6 +64,8 @@ p.innerText = (JSON.parse(carroStr[1]));
 
 });
 
+
+//versão com array
 
 
 /* let nome = document.querySelector('#field1');
